@@ -1,2 +1,2 @@
 # VulnScanner
-vulnerability scanning project
+vulnerability scanning project.
