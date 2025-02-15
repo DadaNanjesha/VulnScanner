@@ -1,0 +1,41 @@
+{
+    "_meta": {
+        "hash": {
+            "sha256": "d3b07384d113edec49eaa6238ad5ff00",
+            "pipfile-spec": 6
+        },
+        "requires": {
+            "python_version": "3.8"
+        },
+        "source": [
+            {
+                "url": "https://pypi.org/simple",
+                "verify_ssl": true,
+                "name": "pypi"
+            }
+        ]
+    },
+    "default": {
+        "pandas": {
+            "version": "==1.5.3"
+      
+        },
+        "numpy": {
+            "version": "==1.21.5"
+         
+        },
+        "requests": {
+            "version": "==2.26.0"
+          
+        },
+        "matplotlib": {
+            "version": "==3.4.3"
+         
+        },
+        "scipy": {
+            "version": "==1.7.3"
+        
+        }
+    },
+    "develop": {}
+}
