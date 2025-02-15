@@ -41,4 +41,4 @@ scan_results = scan_dependencies_with_osv_cli(lockfile_path, output_path)
 
 if scan_results:
     print("OSV Scan Results:")
-    print(scan_results)
+    # print(scan_results)
