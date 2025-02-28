@@ -1,0 +1,117 @@
+[
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "subprocess",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "subprocess",
+        "description": "subprocess",
+        "detail": "subprocess",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "setup",
+        "importPath": "setuptools",
+        "description": "setuptools",
+        "isExtraImport": true,
+        "detail": "setuptools",
+        "documentation": {}
+    },
+    {
+        "label": "find_packages",
+        "importPath": "setuptools",
+        "description": "setuptools",
+        "isExtraImport": true,
+        "detail": "setuptools",
+        "documentation": {}
+    },
+    {
+        "label": "scan_dependencies_with_osv_api",
+        "kind": 2,
+        "importPath": "scripts.osv_scanner",
+        "description": "scripts.osv_scanner",
+        "peekOfCode": "def scan_dependencies_with_osv_api(dependencies):\n    \"\"\"Scan dependencies with OSV API for vulnerabilities.\"\"\"\n    \"https://osv.dev/list?q=requests&ecosystem=PyPI\"\n    package_name =dependencies.get(\"name\")\n    # OSV URL for searching vulnerabilities of a specific package in PyPI\n    osv_url = f\"https://osv.dev/list?q={package_name}&ecosystem=PyPI\"\n    try:\n        # Send a GET request to the OSV search URL\n        response = requests.get(osv_url)\n        response.raise_for_status()  # Check if the request was successful",
+        "detail": "scripts.osv_scanner",
+        "documentation": {}
+    },
+    {
+        "label": "dependencies",
+        "kind": 5,
+        "importPath": "scripts.osv_scanner",
+        "description": "scripts.osv_scanner",
+        "peekOfCode": "dependencies = {\n    \"name\": \"requests\",         # Example package name\n    \"version\": \"2.26.0\"         # Example version\n}\n# Scan the package with OSV and check for vulnerabilities\nscan_results = scan_dependencies_with_osv_api(dependencies)\nif scan_results:\n    print(\"Scan Results:\", json.dumps(scan_results, indent=4))",
+        "detail": "scripts.osv_scanner",
+        "documentation": {}
+    },
+    {
+        "label": "scan_results",
+        "kind": 5,
+        "importPath": "scripts.osv_scanner",
+        "description": "scripts.osv_scanner",
+        "peekOfCode": "scan_results = scan_dependencies_with_osv_api(dependencies)\nif scan_results:\n    print(\"Scan Results:\", json.dumps(scan_results, indent=4))",
+        "detail": "scripts.osv_scanner",
+        "documentation": {}
+    },
+    {
+        "label": "scan_dependencies_with_osv_cli",
+        "kind": 2,
+        "importPath": "scripts.vuln_scanner",
+        "description": "scripts.vuln_scanner",
+        "peekOfCode": "def scan_dependencies_with_osv_cli(lockfile_path, output_path):\n    \"\"\"Use OSV-Scanner CLI to scan dependencies and save the result in a JSON file.\"\"\"\n    # Check if the lockfile exists\n    if not os.path.exists(lockfile_path):\n        print(f\"Error: The file '{lockfile_path}' does not exist.\")\n        return None\n    # Construct the OSV-Scanner CLI command\n    command = [\n        \"osv-scanner\", \"scan\", \n        \"--format\", \"json\", ",
+        "detail": "scripts.vuln_scanner",
+        "documentation": {}
+    },
+    {
+        "label": "lockfile_path",
+        "kind": 5,
+        "importPath": "scripts.vuln_scanner",
+        "description": "scripts.vuln_scanner",
+        "peekOfCode": "lockfile_path = r\"data/Pipfile.lock\"  # Use raw string to handle backslashes in paths\noutput_path = r\"data/output.json\"     # Use raw string to handle backslashes in paths\nscan_results = scan_dependencies_with_osv_cli(lockfile_path, output_path)\nif scan_results:\n    print(\"OSV Scan Results:\")\n    print(scan_results)",
+        "detail": "scripts.vuln_scanner",
+        "documentation": {}
+    },
+    {
+        "label": "output_path",
+        "kind": 5,
+        "importPath": "scripts.vuln_scanner",
+        "description": "scripts.vuln_scanner",
+        "peekOfCode": "output_path = r\"data/output.json\"     # Use raw string to handle backslashes in paths\nscan_results = scan_dependencies_with_osv_cli(lockfile_path, output_path)\nif scan_results:\n    print(\"OSV Scan Results:\")\n    print(scan_results)",
+        "detail": "scripts.vuln_scanner",
+        "documentation": {}
+    },
+    {
+        "label": "scan_results",
+        "kind": 5,
+        "importPath": "scripts.vuln_scanner",
+        "description": "scripts.vuln_scanner",
+        "peekOfCode": "scan_results = scan_dependencies_with_osv_cli(lockfile_path, output_path)\nif scan_results:\n    print(\"OSV Scan Results:\")\n    print(scan_results)",
+        "detail": "scripts.vuln_scanner",
+        "documentation": {}
+    }
+]
